@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>PICKER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/PICKER.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='css/jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='css/nicepage.js') }}" defer=""></script>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Alata:400">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "COlorPicker",
+		"logo": "images/cop-white.png"
+}</script>
+    <meta property="og:title" content="PICKER">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#478ac9">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  </head>
+  <body class="u-body u-overlap"><header class="iniatas u-clearfix u-header u-header" id="atas"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="IniMenu u-menu u-menu-one-level u-offcanvas u-menu-1" data-position="MenuCOP">
+          <div class="menu-collapse u-custom-font" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-family: Alata;">
+            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="#" style="padding: 2px 0px; font-size: calc(1em + 4px);">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-custom-font u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="{{ url_for('home') }}" style="padding: 10px 0px;">HOME</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="{{ url_for('picker') }}" style="padding: 10px 0px;">PICKER</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="{{ url_for('popular') }}" style="padding: 10px 0px;">POPULAR</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="{{ url_for('about') }}" style="padding: 10px 0px;">ABOUT</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('home') }}" style="padding: 10px 0px;">HOME</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('picker') }}" style="padding: 10px 0px;">PICKER</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('popular') }}" style="padding: 10px 0px;">POPULAR</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('about') }}" style="padding: 10px 0px;">ABOUT</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-image u-section-1" id="sec-e0a1" data-image-width="1000" data-image-height="667">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-body-alt-color u-text-1">How to use color picker?</h2>
+        <ol class="u-custom-font u-font-montserrat u-text u-text-body-alt-color u-text-2">
+          <li>&nbsp;Upload your image</li>
+          <li>&nbsp;Drag your cursor inside the picker area to highlight a color</li>
+          <li>&nbsp;Voila! The RGB code will appear on your screen</li>
+        </ol>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-6e3d">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <br>
+            <br>
+
+            <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data"">
+
+              <div class="form-group" >
+              <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+              <div class="col-sm-10">          
+                  <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+              </div>
+              </div>
+  
+              <div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+              </div>
+          </form>
+          </div>
+        </div>
+
+
+        <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-white u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <div class="chart" id="bargraph">
+              <script>
+                  var graphs = {{graph | safe}};
+                  Plotly.plot('bargraph',graphs,{});
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
+background-color: #ffffff !important
+}</style>
+    
+    
+    <footer class="u-clearfix u-footer u-grey-80" id="Bawah"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="{{ url_for('about') }}" data-page-id="363626702" class="u-image u-logo u-image-1" data-image-width="1080" data-image-height="1080" title="ABOUT">
+          <img src="{{ url_for('static', filename='images/cop-white.png') }}" class="u-logo-image u-logo-image-1" data-image-width="80">
+        </a>
+        <p class="u-align-right u-text u-text-1">©2021 Team #1 | Data Science Technolgy<br>
+          <a href="https://ftmm.unair.ac.id/en/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">FTMM</a> |&nbsp;<a href="https://www.unair.ac.id/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" target="_blank">Airlangga University<br>
+          </a>
+        </p>
+      </div></footer>
+  </body>
+</html>
